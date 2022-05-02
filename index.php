@@ -1,10 +1,8 @@
 <?php
 
 $string = " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum hic dolor et suscipit? Repellendus, unde autem iure distinctio inventore repudiandae est quo expedita rerum fuga debitis, quam illum nihil dolorum! ";
-
+$badWords = $_GET['badWords'];
 ?>
-
-<!-- <h1> Hello, my name is <?php echo $name; ?>, and I'am <?php echo $age; ?> year old </h1> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +15,8 @@ $string = " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum hic 
 </head>
 
 <body>
-    <h2> <?php echo $string ?> </h2>
+    <h2> <?php echo str_replace($badWords, '***', $string) ?> </h2>
+    <h3> The lenght of the paragraph is <?php echo (strlen($string)) ?> characters long </h3>
 
 </body>
 
